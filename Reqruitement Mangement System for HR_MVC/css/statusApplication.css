@@ -1,0 +1,11 @@
+.applied-row {
+    background-color: seashell;
+}
+
+.rejected-row {
+    background-color: lightcoral;
+}
+
+.scheduled-row {
+    background-color: lightblue; 
+}
