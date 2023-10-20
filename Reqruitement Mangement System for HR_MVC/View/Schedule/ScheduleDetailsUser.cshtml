@@ -1,0 +1,75 @@
+@model IEnumerable<RecuirementManagement.Models.ScheduleWithDetails>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ScheduleDetailUser</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <link href="~/Content/css/regform.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/logo.css" rel="stylesheet" />
+    <link href="~/Content/css/candidatePage.css" rel="stylesheet" />
+</head>
+<body class="body-bg">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <div class="logo">
+                    <span class="circle">im</span>
+                </div>
+            </a>
+            <a class="navbar-brand" href="#">
+                <h1 class="logo-text">Impact <span class="dot">.</span></h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Logout
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="@Url.Action("Index","Candidate")">Home</a>
+                            <a class="dropdown-item" href="@Url.Action("Logout", "Candidate")">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    @foreach (var schedule in Model)
+    {
+        <div class="custom-div">
+            <div style="text-align: center;">
+                <h3>Impact Interview - @schedule.scheduleDate.ToString("dd MMMM yyyy")</h3>
+            </div>
+            <div>
+                <p>Hi @schedule.firstName @schedule.lastName,</p>
+                <p>You are selected for the interview for the position @schedule.jobRole.</p>
+                <p>Time: @schedule.scheduleTime pm India</p>
+                <p>Date: @schedule.scheduleDate.ToString("MMMM dd, yyyy")</p>
+                <p>Organizer: @schedule.organizer</p>
+                <p>Join Zoom Meeting: <strong><a href="@schedule.link" target="_blank" style="text-decoration: none; color: #007bff;">@schedule.link</a></strong></p>
+                <p>Meeting ID: 829 3734 7821</p>
+                <p>Passcode: 7U4KgF</p>
+                <p><strong>HR Contact: hr@impact.com</strong></p>
+            </div>
+        </div>
+    }
+    <footer class="fixed-bottom">
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Impact. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
