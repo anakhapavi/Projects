@@ -1,0 +1,89 @@
+@model RecuirementManagement.Models.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DeleteConfirmed</title>
+    <link href="~/Content/css/regform.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/logo.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <div class="logo">
+                    <span class="circle">im</span>
+                </div>
+            </a>
+            <a class="navbar-brand" href="#">
+                <h1 class="logo-text">Impact <span class="dot">.</span></h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#changepswd">Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#login">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="profile-picture">
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 30px; height: 30px;" alt="Avatar" />
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Are you sure you want to delete this?</h3>
+                        <div>
+                            <h4 class="card-subtitle">Registration</h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.firstName)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.firstName)
+                                </dd>
+
+
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                                    @Html.ActionLink("Back to List", "GetInformation")
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom">
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Impact. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
