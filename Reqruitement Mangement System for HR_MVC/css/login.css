@@ -1,0 +1,66 @@
+
+header {
+    background-color: #00AF91;
+    color: #184D47;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; 
+}
+
+
+.logo-text {
+    color: white;
+    margin-right: 10px;
+}
+
+.dot {
+    color: orange;
+}
+
+footer {
+    background-color: #00AF91; /*#008374;*/ /*#03C988*/
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px; 
+}
+
+    footer.container {
+        color: white;
+    }
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background-color: #184D47; 
+}
+
+.card {
+    background-color: white; 
+    padding: 20px;
+    border-radius: 10px;
+}
+body {
+    background-image: url('/Image/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+.navbar-nav-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #fff !important;
+    font-weight: 600;
+}
