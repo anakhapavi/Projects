@@ -1,0 +1,21 @@
+.body-bg {
+    background-image: url('/Images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+.container-bg {
+    background-image: url('/Images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+/* schedule notificaion */
+.custom-div {
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+}
