@@ -1,0 +1,82 @@
+@model List<byte[]>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayAllImages</title>
+    <link href="~/Content/css/regform.css" rel="stylesheet" />
+    <link href="~/Content/css/logo.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .image-container {
+            width: 600px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .about-text  {
+            font-family: Verdana;
+            font-size: larger;
+            font-variant-caps: all-petite-caps;
+            color: ActiveCaption;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <div class="logo">
+                    <span class="circle">im</span>
+                </div>
+            </a>
+            <a class="navbar-brand" href="#">
+                <h1 class="logo-text">Impact <span class="dot">.</span></h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")" style="background-color: #00AF91; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Home</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Logindetails", "Login")" style="background-color: #00AF91; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Login</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("AddInformation", "Registration")" style="background-color: #00AF91; color: black; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <p class="about-text">Life At Impact</p>
+
+    <div class="gallery">
+        @foreach (var imageData in Model)
+        {
+            <div class="image-container">
+                <img src="data:image/jpeg;base64,@Convert.ToBase64String(imageData)" alt="Image" />
+            </div>
+        }
+    </div>
+    <footer class="fixed-bottom">
+        <div class="footer">
+            <p>&copy; @DateTime.Now.Year - Impact. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
