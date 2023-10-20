@@ -1,0 +1,194 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/css/video.css" rel="stylesheet" />
+    <script src="~/Scripts/js/animate.js"></script>
+    <script src="~/Scripts/js/notification.js"></script>
+
+</head>
+<body>
+    <!-- Video Section -->
+    @*<section id="video-section">
+            <div class="video-container">
+                <video autoplay loop muted poster="video-poster.jpg">
+                    <source src="~/videos/video.mp4" type="video/quicktime">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>*@
+    <section id="image">
+        <div class="image-container">
+            <img src="~/Images/wallpaper..jpg" alt="Description of the Image">
+            <div class="text">
+                <!-- Initial state: Display only the first text -->
+                <h1 class="animated-text" style="display: block; opacity: 1;">Welcome to Impact.</h1>
+                <h1 class="animated-text" style="display: none; opacity: 0;">Are you looking for a Job.</h1>
+                <h1 class="animated-text" style="display: none; opacity: 0;">Connect with us.</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section id="about">
+        <!-- About Us content here -->
+        <div class="about-content">
+            <h2><u>About us</u></h2>
+            <div class="about-images">
+                <div class="about-image">
+                    <img src="~/Images/team2.jpg" alt="Image Description">
+                </div>
+                <div class="about-image">
+                    <img src="~/Images/team.jpg" alt="Image Description">
+                </div>
+            </div>
+            <div class="about-text">
+                <p>
+                    Impact is a world-leading experiential learning company. Since 1980, we have worked with organizations to develop leadership capacity and catalyze change. We believe that organizations should be purpose-driven, human-centric places where people can thrive while making a positive impact in the world. We break down barriers that exist between sectors and industries to create meaningful social impact partnerships between companies, social sector organizations and the people that drive them. The common purpose of these connections: to deliver real value to each partner through innovations in community engagement, and ultimately to address deeply rooted and complex social challenges. We have a deep understanding of both mission-focused and business goals. Common Impact enables growing nonprofits to achieve even greater results in our communities while simultaneously engaging corporate employees in dynamic and challenging opportunities that develop their skills and unlock successful, purpose-driven careers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact" >
+        <div class="container" data-aos="fade-up">
+            <div class="section-header"><br>
+                <h2><u>Contact us</u></h2><br>
+                <div class="contact-text">
+                <p>
+                    Impact is committed to protecting and respecting your privacy. We will only use the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, how to contact us, as well as our privacy practices and commitment to protecting your privacy, please review our Privacy Policy.
+                </p>
+                </div>
+            </div>
+            <div class="row gx-lg-0 gy-4">
+                <div class="col-lg-4">
+                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                        <div class="info-item d-flex">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h4>Location:</h4>
+                                <p>Kochi Infopark, Kakkanad</p>
+                            </div>
+                        </div><!-- End Info Item -->
+                        <div class="info-item d-flex">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h4>Email:</h4>
+                                <p>impact@gmail.com</p>
+                            </div>
+                        </div><!-- End Info Item -->
+                        <div class="info-item d-flex">
+                            <i class="bi bi-phone flex-shrink-0"></i>
+                            <div>
+                                <h4>Call:</h4>
+                                <p>+22 44 56 7</p>
+                            </div>
+                        </div><!-- End Info Item -->
+                        <div class="info-item d-flex">
+                            <i class="bi bi-clock flex-shrink-0"></i>
+                            <div>
+                                <h4>Open Hours:</h4>
+                                <p>Mon-Sat: 11AM - 23PM</p>
+                            </div>
+                        </div><!-- End Info Item -->
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <form id="contactForm" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+                        </div>
+
+                        <div id="notification" class="notification"></div>
+                        <div class="text-center"style="align-content:center">
+                            <button type="submit" class="btn btn-primary" style="align-content:center">Send Message</button>
+                        </div>
+                    </form>
+                </div><!-- End Contact Form -->
+            </div>
+        </div>
+    </section>
+
+    <section id="jobs">
+    </section>
+
+    <footer id="footer" class="footer" style="background-color: #025955 ">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                    </a>
+
+                    <h1 style="color:white">Impact <span class="dot"  style="color:orange">.</span></h1>
+
+                    <div class="social-links d-flex mt-4">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Cloud Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-5 col-md-6 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Kochi Infopark <br>
+                        Phase II<br>
+                        Kakkanad <br>
+                        <strong>Phone:</strong> +9988 1210 10<br>
+                        <strong>Email:</strong> carrersimpcat@gmail.com.com<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
